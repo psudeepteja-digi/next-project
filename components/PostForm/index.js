@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from '../../styles/postForm.module.scss'
 
-export default function PostForm() {
+export default function PostForm({handleSubmit, handleChange, dataValue, }) {
   return (
     <div>
-      <form>
-        <textarea className={styles.formContent}></textarea>
-        <button className={styles.formButton}>add post</button>
+      <form onSubmit={handleSubmit}>
+        <textarea className={styles.formContent} onChange={handleChange} value={dataValue}></textarea>
+        <button className={styles.formButton} type='submit' style={{cursor: 'pointer'}}>Add Post</button>
       </form>
     </div>
   )
